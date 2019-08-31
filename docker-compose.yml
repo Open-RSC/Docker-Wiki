@@ -15,6 +15,7 @@ services:
       - 443
     volumes:
       - './html/images:/var/www/html/images'
+      - './extensions/Scribunto:/var/www/html/extensions/Scribunto'
 #      - './LocalSettings.php:/var/www/html/LocalSettings.php'
 
 networks:
