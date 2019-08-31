@@ -14,7 +14,8 @@ services:
       - 80
       - 443
     volumes:
-      - './html:/var/www/html'
+      - './html/images:/var/www/html/images'
+#      - './LocalSettings.php:/var/www/html/LocalSettings.php'
 
 networks:
   default:
