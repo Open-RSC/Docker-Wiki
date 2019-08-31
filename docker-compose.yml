@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  wiki:
+    container_name: wiki
+    image: mediawiki:latest
+    restart: always
+    hostname: ${WIKI_HOSTNAME}
+    environment:
+      VIRTUAL_HOST: ${WIKI_HOSTNAME}
+      LETSENCRYPT_HOST: ${WIKI_HOSTNAME}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+    expose:
+      - 80
+      - 443
+    volumes:
+      - './html:/var/www/html'
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
